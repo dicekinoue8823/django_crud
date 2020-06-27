@@ -259,5 +259,35 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 ### extends,load crispy_forms_tags,<!--forms-right-icons-->から下
 ### {% block body %}を追加する
 ### 少し不格好ですが、まずはこんな感じでいきましょう
-### Sign up nowの箇所修正
+### Sign up nowの箇所修 
 ### button の classを修正
+
+## 13. Mixin
+
+### 新しい投稿するボタンをまず作成したいと思います
+### home.htmlを修正する
+### 今回はloginしていない場合、新規登録画面へはいけないようにする
+### views.py にいき、追加する
+### django.contrib.auth.mixins
+### class PostCreateView(CreateView): 修正前
+### class PostCreateView(LoginRequiredMixin, CreateView): 修正後
+### urls.py (config) path('accounts/', include('account.urls')),
+
+### model.py を修正
+### from django.urls import reverseを追加
+###
+### 新しく作られたdetail　viewのURLは作られる前にはわからないですよね
+### reverseにするとリンク先をDjangoが探してくれる
+### 少しこの説明は難しいので今理解できなくても大丈夫です。
+### 今はいろいろな方法でリンクする方法があるんだなと思ってくれたら良いです
+
+### では、updateを作っていきたいと思います
+### views.pyにいって下さい。
+### PostUpdateViewを作成しますが、ほとんどPostCreateViewと同じです
+### urls.py に追加します
+
+### 注意しないといけないのは、新規投稿はloginしていれば投稿できるでよかったですが
+### 投稿の編集は、投稿者のみ編集できるようにする必要があります
+### views.pyにいって下さい
+### UserPassesTestMixinを追加
+### test_funcを追加
