@@ -66,8 +66,14 @@
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="{% url 'login' %}">Log In</a></li>
-                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                <li><a href="#">Profile</a></li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}">Log In</a></li>
+                                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                            {% endif %}
+
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

@@ -199,3 +199,29 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 - ### LOGIN_REDIRECT_URL = 'blog-home'
 - ### views.py redirectをloginに変更する（登録したらLoginページへ遷移させる）
 - ### base.html login リンクを修正する
+
+## 11. Authenticate
+
+### loginしている場合は、「login」「signup」のリンクは必要ないですよね？
+### Djangoには便利は、Authenticateがあります。
+
+### base.html を編集。Profileはユーザ情報の変更をする画面で少し複雑になるので
+### この初級編では取り扱いしません。
+
+### 一連の流れを実施
+
+### bolgのCRUDの実装にいきたいと思います。
+### views.pyを開いて、個別に投稿を編集するには、DetailViewが必要
+### PostDetailViewを追加する
+### PostDetailViewにリンクするために、urls.pyに追加する
+
+### 前回PostListViewを作った時は、template_nameを指定しましたが
+### しなくても、デフォルトで決まっているので今回は使用してみます。
+- ### appの名前/modelの名前_viewの名前
+
+### 今回は、blog/post_detail.html
+### この内容は、home.htmlから持ってくる
+### context_object_name = 'posts' を指定しているので、postsになっているが
+### デフォルトは、objectになっている
+### 一度開いてみる、http://127.0.0.1:8000/post/1/
+
