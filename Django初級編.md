@@ -225,3 +225,39 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 ### デフォルトは、objectになっている
 ### 一度開いてみる、http://127.0.0.1:8000/post/1/
 
+## 12. Primary Key?
+
+### extendsを追加する
+
+### block を追加する
+
+### 左側によっているので、中央に寄せる。
+
+### 見た目は良くない大宇が、今回はCRUDの初級編なのでこの辺にしておきます。
+
+### detailへのリンクを設定したいので、home.htmlを修正します。
+
+### post.titleの箇所にアンカータグを設定していきます。
+
+### ブログを投稿するページがないので、CreateViewを作っていきたいと思います
+
+### まず、views.pyにいってください
+### CreateViewを追加していきますが、長くなってきたので、（）で囲みます
+### PostCreateViewクラスを追加します
+### fieldsに入力したい項目を設定します
+### 'title', 'content'を追加します、あとは時間と著者があったと思いますが
+### 時間は自動で入るので問題なし、著者は登録したユーザが著者になるようにしたと思います
+
+### urls.py にpathを追加します。
+### テンプレートを作成していきたいと思いますが、detailから推測すると
+### appの名前/modelの名前_createと思いますが、後で作成するUpdateでも
+### 今回のテンプレートを使うため、デフォルトでは以下になっています
+
+- ### appの名前/modelの名前_form.html
+
+### signupから持ってくる
+### extends,load crispy_forms_tags,<!--forms-right-icons-->から下
+### {% block body %}を追加する
+### 少し不格好ですが、まずはこんな感じでいきましょう
+### Sign up nowの箇所修正
+### button の classを修正
