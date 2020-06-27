@@ -20,10 +20,6 @@
 
 <body id="wrapper">
 
-    {% block body %}
-
-
-
     <section id="top-header">
         <div class="container">
             <div class="row">
@@ -64,14 +60,14 @@
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="{% url 'blog-home' %}">Home</a></li>
                             <li><a href="features.html">Features</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li><a href="login.html">Sign In</a></li>
-                            <li><a href="registration.html">Sign Up</a></li>
+                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -80,6 +76,8 @@
         </nav>
     </header>
     <!--/.nav-ends -->
+
+    {% block body %}
 
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
