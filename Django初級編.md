@@ -155,3 +155,26 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 
 - ### from django.contrib.auth.forms import UserCreationForm
 
+### 7 Crispy Forms
+
+### 一番簡単なのは
+### {{ form }} --> {{ form.as_p }}
+### form パラグラフと同じタグ <p> 段落になります
+
+### まだ、ゴチャゴチャしていて、カッコよくないですね
+### その場合は、新しくCrispy Formsというものを入れます。
+- ### pip install django-crispy-forms
+### settings.pyに追加する（INSTALLED_APPS）
+- ### 'crispy_forms', # 追加する
+### settings.pyに追加する（一番したの方に）
+### bootstrapは現在最新は、bootstrap4.xになりますが
+### ダウンロードしたテンプレートがbootstrap3を使用しているため
+### 今回はbootstrap3をしてします
+- ### CRISPY_TEMPLATE_PACK = 'bootstrap3' # 追加する
+
+### {% load crispy_forms_tags %} # 追加する
+### {{ form.as_p }} --> {{ form|crispy }}
+
+### ドキュメント
+- ### https://docs.djangoproject.com/ja/3.0/contents/
+
