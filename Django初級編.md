@@ -178,3 +178,24 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 ### ドキュメント
 - ### https://docs.djangoproject.com/ja/3.0/contents/
 
+## 10. Login Logout
+
+### account -> urls.py に追加する
+### フレームワークでLogin-Logoutが提供されている
+
+- ### from django.contrib.auth import views as auth_views # 追加
+- ### path('login/', auth_views.LoginView.as_view(template_name='account/login.html'), name='login'),
+- ### path('logout/', auth_views.LogoutView.as_view(template_name='account/logout.html'), name='logout'),
+
+### キャメルケース、スネークケース  あくまでもルールとして
+
+### login logout を作っていきましょう
+
+### loginすると、以下のエラーが発生する
+### Request URL:	http://127.0.0.1:8000/accounts/profile/    
+### Djangoのデフォルト設定でログインした後に、profileのページに遷移するようになっている
+### settings.py に 以下を追加する
+
+- ### LOGIN_REDIRECT_URL = 'blog-home'
+- ### views.py redirectをloginに変更する（登録したらLoginページへ遷移させる）
+- ### base.html login リンクを修正する
