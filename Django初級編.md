@@ -291,3 +291,42 @@ https://docs.djangoproject.com/ja/3.0/misc/design-philosophies/#dry
 ### views.pyにいって下さい
 ### UserPassesTestMixinを追加
 ### test_funcを追加
+
+## 14. DeleteView
+
+### views.pyにいって下さい。
+### DeleteViewをimportします
+### DeleteViewはUpdateViewとほとんど一緒なのでUpdateViewをCopyします
+- ### UpdateViewの箇所をDeleteViewに変更する
+- ### def form_valid(self, form)はいらない
+### login,書いた書いた著作でないと消せない
+### delete後のURLを指定する必要有り
+- ### success_url を指定
+
+### urlを繋ぐ必要が有りますので、urls.pyにいってください
+### PostDeleteViewをimportします
+### pathを設定する、updateとほとんど同じ
+
+### 次にhtmlを作成していきます
+### デフォルトは以下になります
+- ### appの名前/modelの名前_confirm_delete.html
+### 中身はpost_form.htmlと似ているのでCopyしてきます
+### crispy_forms_tagsなどはいりません
+### 直接URLでdeleteしてみる
+
+### deleteへのリンクを作成していきたいと思います
+
+### cssで横に並べてカッコよくできますが、今回はDjangoのCRUD
+### ということなのでこの辺にしておきましょう
+
+### DjangoでWebアプリケーションを作る流れが理解していただけたでしょうか？
+### こんな感じでDjangoではWebアプリケーションを作成していきますが
+### Djangoのフレームワークを使う事によって記述するコードが少なくてすみます
+
+### 今回の勉強会を通じて、Webアプリケーションの作成するイメージを
+### 掴んで頂けたかなと思っています。
+### 次のSpringフレームワークへ繋げて頂ければと思います
+### またバックエンド側だけでなく、フロントエンドの重要性もなんとなく
+### 理解して頂けたかなと思っています。
+
+### 最後にPythonの良さを体験して頂いて、今後の活用して頂ければ幸いです。

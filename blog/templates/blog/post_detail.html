@@ -11,6 +11,13 @@
                     <li> <i class="fa fa-check"></i>{{ object.content }}</li>
                 </ul>
                 <hr/>
+                <form action="{% url 'post-update' post.id %}">
+                    <button type="submit" class="btn btn-success slide">Update <i class="fa fa-edit"></i> </button>
+                </form>
+                <br/>
+                <form action="{% url 'post-delete' post.id %}">
+                    <button type="submit" class="btn btn-danger slide">Delete <i class="fa fa-trash"></i> </button>
+                </form>
             </div>
         </div>
     </div>
